@@ -52,7 +52,7 @@ void playTurn(const char *name, int dice[3], int isAI,int* max_attempt, int powe
         CLEAR();
         printTitle();
 
-        printf(BOLD BRIGHT_WHITE"LANCER %d - %s\n\n"RESET, attempt, name);
+        printf(BOLD BRIGHT_WHITE"LANCER %d/%c - %s\n\n"RESET, attempt,(*max_attempt==0)? 'x': *max_attempt+'0', name);
         if (attempt == 1) {
             for (int i = 0; i < 3; i++)
                 dice[i] = rollDice();
