@@ -44,3 +44,51 @@
 
 1764504198 d:\documents\scolaire\cyber1\algo et c\exo\421\ai.h
 
+1764750514 source:d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\ai\ai.c
+	<stdio.h>
+	<stdlib.h>
+	"../dice/dice.h"
+
+1764143026 d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\dice\dice.h
+
+1764755982 source:d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\dice\dice.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"../../utils/utils.h"
+
+1764755638 source:d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\game.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"dice/dice.h"
+	"rules/rules.h"
+	"ai/ai.h"
+	"../utils/utils.h"
+
+1764095436 d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\rules\rules.h
+
+1764504198 d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\ai\ai.h
+
+1764755008 d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\utils\utils.h
+
+1764322236 source:d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\rules\rules.c
+	<stdio.h>
+	<stdlib.h>
+
+1764750446 source:d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"game/game.h"
+	"utils/utils.h"
+
+1764143268 d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\game\game.h
+
+1764755496 source:d:\documents\scolaire\cyber1\algo et c\exo\421\codeblocks\utils\utils.c
+	<stdio.h>
+	<stdlib.h>
+	"utils.h"
+

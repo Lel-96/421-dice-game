@@ -52,21 +52,21 @@ void playTurn(const char *name, int dice[3], int isAI,int* max_attempt, int powe
         CLEAR();
         printTitle();
 
-        printf("LANCER %d - %s\n\n", attempt, name);
+        printf(BOLD BRIGHT_WHITE"LANCER %d - %s\n\n"RESET, attempt, name);
         if (attempt == 1) {
             for (int i = 0; i < 3; i++)
                 dice[i] = rollDice();
         }
 
         printPlayerDice(name, dice);
-        printf("Puissance actuelle : %d\n", power(dice));
+        printf(ITALIC BRIGHT_YELLOW"Puissance actuelle : %d\n"RESET, power(dice));
 
         if (attempt == 3 && *max_attempt ==0 || attempt == *max_attempt)
             break;
 
         if (isAI) {
             AIReroll(dice, power(dice), power_p1);
-            printf("\nL'IA relance automatiquement...\n");
+            printf(BRIGHT_RED"\nL'IA relance automatiquement...\n"RESET);
             waitEnter();
             attempt++;
         } else {
@@ -79,6 +79,7 @@ void playTurn(const char *name, int dice[3], int isAI,int* max_attempt, int powe
         }
 
     }
+    printf(RESET);
     *max_attempt = attempt;
 }
 
@@ -119,12 +120,12 @@ int round0(int p1[3], int p2[3], int mode)
     while(1)
     {
         printTitle();
-        printf("Premier tour\n");
-        printf("→ Joueur 1 joue.\n");
+        printf(BOLD"Premier tour\n"RESET);
+        printf(ITALIC"→ Joueur 1 joue.\n"ITALIC);
         waitEnter();
         playTurn("Joueur 1", p1, 0, &max_attempt, 0);
 
-        printf("→ Joueur 2 joue.\n");
+        printf(ITALIC"→ Joueur 2 joue.\n"ITALIC);
         waitEnter();
         playTurn("Joueur 2", p2, (mode == 2 ? 1 : 0), &max_attempt, power(p1));
         waitEnter();
@@ -134,19 +135,19 @@ int round0(int p1[3], int p2[3], int mode)
         CLEAR();
         printTitle();
 
-        printf("Résultats de la manche :\n");
-        printf(" - Joueur 1 : puissance %d\n", pw1);
-        printf(" - Joueur 2 : puissance %d\n\n", pw2);
+        printf(BOLD BRIGHT_WHITE"Résultats de la manche :\n");
+        printf(BRIGHT_BLUE" - Joueur 1 : puissance %d\n", pw1);
+        printf(BRIGHT_RED" - Joueur 2 : puissance %d\n\n", pw2);
         if (win == 1) {
             can_start =1;
-            printf("Joueur 1 commence la partie !\n");
+            printf(BLINK BLUE"Joueur 1 commence la partie !\n");
         }
         else if (win == 2) {
             can_start =1;
-            printf("Joueur 2 commence la partie!\n");
+            printf(BLINK RED"Joueur 2 commence la partie!\n");
         }
-        else printf("Égalité parfaite ! Recommecer.\n");
-
+        else printf(BLINK BRIGHT_GREEN"Égalité parfaite ! Recommecer.\n");
+        printf(RESET);
         waitEnter();
         if(can_start) return win;
     }
@@ -169,9 +170,9 @@ int game()
 
     CLEAR();
     printTitle();
-    printf("Mode de jeu :\n");
+    printf(BLINK BOLD BRIGHT_WHITE"Mode de jeu :\n" RESET);
     printf(" 1 - 2 Joueurs humains\n");
-    printf(" 2 - Joueur vs IA\n\n");
+    printf(" 2 - Joueur vs IA\n\n"RESET);
     printf("Votre choix : ");
     scanf("%d", &mode);
     getchar();
@@ -185,20 +186,20 @@ int game()
         CLEAR();
         printTitle();
 
-        printf("====== %c ======\n", round);
-        printf("JETONS :\n");
-        printf("Joueur 1 : %d\n", jetons_p1);
-        printf("Joueur 2 : %d\n", jetons_p2);
-        printf("Pot : %d\n\n", bank);
+        printf(BOLD BRIGHT_YELLOW"====== %c ======\n" RESET, round);
+        printf(BOLD"JETONS :\n"RESET);
+        printf(BRIGHT_BLUE"Joueur 1 : %d\n", jetons_p1);
+        printf(BRIGHT_RED"Joueur 2 : %d\n", jetons_p2);
+        printf(BRIGHT_MAGENTA"Pot : %d\n\n"RESET, bank);
 
         if (beginner ==1)
         {
             max_attempt =0;
-            printf("→ Joueur 1 joue.\n");
+            printf(ITALIC"→ Joueur 1 joue.\n"RESET);
             waitEnter();
             playTurn("Joueur 1", p1, 0, &max_attempt, 0);
 
-            printf("→ Joueur 2 joue.\n");
+            printf(ITALIC"→ Joueur 2 joue.\n"RESET);
             waitEnter();
             playTurn("Joueur 2", p2, (mode == 2 ? 1 : 0), &max_attempt, power(p1));
             waitEnter();
@@ -206,13 +207,14 @@ int game()
         else
         {
             max_attempt = 0;
-            printf("→ Joueur 2 joue.\n");
+            printf(ITALIC"→ Joueur 2 joue.\n"RESET);
             waitEnter();
             playTurn("Joueur 2", p2, (mode == 2 ? 1 : 0), &max_attempt, 0);
 
-            printf("→ Joueur 1 joue.\n");
+            printf(ITALIC"→ Joueur 1 joue.\n"RESET);
             waitEnter();
             playTurn("Joueur 1", p1, 0, &max_attempt, 0);
+            waitEnter();
         }
 
 
@@ -223,9 +225,9 @@ int game()
         CLEAR();
         printTitle();
 
-        printf("Résultats de la manche :\n");
-        printf(" - Joueur 1 : puissance %d\n", pw1);
-        printf(" - Joueur 2 : puissance %d\n\n", pw2);
+        printf(BRIGHT_WHITE"Résultats de la manche :\n");
+        printf(BLUE" - Joueur 1 :"BRIGHT_YELLOW" puissance %d\n", pw1);
+        printf(RED" - Joueur 2 :"BRIGHT_YELLOW" puissance %d\n\n"RESET, pw2);
 
         int t = 0;
 
@@ -235,16 +237,16 @@ int game()
                 t = token(pw1);
                 t = tokenBank(&bank, t, &round);
                 jetons_p2 += t;
-                printf("Joueur 1 gagne, joueur 2 prend %d jetons !\n", t);
+                printf(BLINK BOLD BRIGHT_BLUE"Joueur 1 gagne, joueur 2 prend %d jetons !\n", t);
             }
             else if (win == 2) {
                 t = token(pw2);
                 t = tokenBank(&bank, t, &round);
                 jetons_p1 += t;
-                printf("Joueur 2 gagne, joueur 1 prend %d jetons ! !\n", t);
+                printf(BLINK BOLD BRIGHT_RED"Joueur 2 gagne, joueur 1 prend %d jetons ! !\n", t);
             }
             else {
-                printf("Égalité parfaite ! Pas d'échange de jetons.\n");
+                printf(BLINK BOLD BRIGHT_GREEN"Égalité parfaite ! Pas d'échange de jetons.\n");
             }
         }
         else
@@ -254,21 +256,22 @@ int game()
                 t =tokenPlayer(jetons_p1, t);
                 jetons_p2 += t;
                 jetons_p1 -= t;
-                printf("Joueur 1 gagne, joueur 2 prend %d jetons !\n", t);
+                printf(BLINK BOLD BRIGHT_BLUE "Joueur 1 gagne, joueur 2 prend %d jetons !\n", t);
             }
             else if (win == 2) {
                 t = token(pw2);
                 t =tokenPlayer(jetons_p2, t);
                 jetons_p1 += t;
                 jetons_p2 -= t;
-                printf("Joueur 2 gagne, joueur 1 prend %d jetons ! !\n", t);
+                printf(BLINK BOLD BRIGHT_RED"Joueur 2 gagne, joueur 1 prend %d jetons ! !\n", t);
             }
             else {
-                printf("Égalité parfaite ! Pas d'échange de jetons.\n");
+                printf(BLINK BOLD BRIGHT_GREEN"Égalité parfaite ! Pas d'échange de jetons.\n");
             }
+
         }
 
-
+        printf(RESET);
         waitEnter();
     }
 

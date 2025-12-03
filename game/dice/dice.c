@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
+#include "../../utils/utils.h"
 
 void printDice(int value)
 {
@@ -53,6 +55,20 @@ void printDice(int value)
 
 void printPlayerDice(const char *player, int t[3])
 {
+    for(int i=0; i<strlen(player); i++)
+    {
+        if(player[i]=='1')
+        {
+            printf(BOLD BRIGHT_BLUE);
+            break;
+        }
+        else if(player[i]=='2')
+        {
+            printf(BOLD BRIGHT_RED);
+            break;
+        }
+        printf(RESET);
+    }
     printf("====== %s ======\n\n", player);
 
     for (int i = 0; i < 3; i++) {

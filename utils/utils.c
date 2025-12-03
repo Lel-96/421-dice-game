@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "utils.h"
 
 
 void printTitle()
 {
+    printf(BOLD BRIGHT_WHITE);
     printf("=====================================\n");
     printf("             JEU DU 421            \n");
-    printf("=====================================\n\n");
+    printf("=====================================\n\n" RESET);
 }
 
 void waitEnter()
 {
-    printf("\nAppuyez sur ENTREE pour continuer...");
+    printf(BOLD BRIGHT_WHITE"\nAppuyez sur ENTREE pour continuer..."RESET);
     getchar();
 }
 

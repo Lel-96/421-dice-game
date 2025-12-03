@@ -31,29 +31,29 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="ai.c">
+		<Unit filename="game/ai/ai.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="ai.h" />
-		<Unit filename="dice.c">
+		<Unit filename="game/ai/ai.h" />
+		<Unit filename="game/dice/dice.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="dice.h" />
-		<Unit filename="game.c">
+		<Unit filename="game/dice/dice.h" />
+		<Unit filename="game/game.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="game.h" />
+		<Unit filename="game/game.h" />
+		<Unit filename="game/rules/rules.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game/rules/rules.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="rules.c">
+		<Unit filename="utils/utils.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="rules.h" />
-		<Unit filename="utils.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="utils.h" />
+		<Unit filename="utils/utils.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
