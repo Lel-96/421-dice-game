@@ -86,9 +86,8 @@ Le 421 est un jeu de dés traditionnel où deux joueurs s'affrontent en lançant
 ### Avec Code::Blocks
 
 1. Ouvrir Code::Blocks
-2. Créer un nouveau projet Console Application (C)
-3. Ajouter tous les fichiers .c et .h au projet
-4. Build and Run (F9)
+2. Ajouter un projet existant
+3. Ouvrire le dossier contenant le projet
 
 ### En ligne de commande
 
