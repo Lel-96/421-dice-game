@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1764322062 source:d:\documents\scolaire\cyber1\algo et c\exo\421\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"game.h"
+	"utils.h"
+
+1764143026 d:\documents\scolaire\cyber1\algo et c\exo\421\dice.h
+
+1764095436 d:\documents\scolaire\cyber1\algo et c\exo\421\rules.h
+
+1764322236 source:d:\documents\scolaire\cyber1\algo et c\exo\421\rules.c
+	<stdio.h>
+	<stdlib.h>
+
+1764142972 source:d:\documents\scolaire\cyber1\algo et c\exo\421\dice.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1764503932 source:d:\documents\scolaire\cyber1\algo et c\exo\421\ai.c
+	<stdio.h>
+	<stdlib.h>
+	"dice.h"
+
+1764418764 source:d:\documents\scolaire\cyber1\algo et c\exo\421\utils.c
+	<stdio.h>
+	<stdlib.h>
+
+1764143268 d:\documents\scolaire\cyber1\algo et c\exo\421\game.h
+
+1764319700 d:\documents\scolaire\cyber1\algo et c\exo\421\utils.h
+
+1764504400 source:d:\documents\scolaire\cyber1\algo et c\exo\421\game.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"dice.h"
+	"rules.h"
+	"ai.h"
+	"utils.h"
+
+1764504198 d:\documents\scolaire\cyber1\algo et c\exo\421\ai.h
+

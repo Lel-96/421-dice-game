@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void printDice(int value)
+{
+    const char *dice[] = {
+        "",
+        "-----\n"
+        "|   |\n"
+        "| o |\n"
+        "|   |\n"
+        "-----\n",
+
+        "-----\n"
+        "|o  |\n"
+        "|   |\n"
+        "|  o|\n"
+        "-----\n",
+
+        "-----\n"
+        "|o  |\n"
+        "| o |\n"
+        "|  o|\n"
+        "-----\n",
+
+        "-----\n"
+        "|o o|\n"
+        "|   |\n"
+        "|o o|\n"
+        "-----\n",
+
+        "-----\n"
+        "|o o|\n"
+        "| o |\n"
+        "|o o|\n"
+        "-----\n",
+
+        "-----\n"
+        "|o o|\n"
+        "|o o|\n"
+        "|o o|\n"
+        "-----\n"
+    };
+
+    if (value < 1 || value > 6) {
+        printf("Valeur invalide : %d\n", value);
+        return;
+    }
+
+    printf("%s", dice[value]);
+}
+
+void printPlayerDice(const char *player, int t[3])
+{
+    printf("====== %s ======\n\n", player);
+
+    for (int i = 0; i < 3; i++) {
+        printDice(t[i]);
+        printf("\n");
+    }
+}
+
+int rollDice() {
+    return rand() % 6 + 1;
+}
