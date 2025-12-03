@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include "dice.h"
-#include "rules.h"
-#include "ai.h"
-#include "utils.h"
+#include "dice/dice.h"
+#include "rules/rules.h"
+#include "ai/ai.h"
+#include "../utils/utils.h"
 
 #ifdef _WIN32
 #define CLEAR() system("cls")
