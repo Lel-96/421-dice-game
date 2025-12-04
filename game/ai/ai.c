@@ -15,7 +15,7 @@ void AIReroll(int dice[3], int power, int power_adv)
     if (power_adv != 0 && power > power_adv)
     {
         for (int i = 0; i < 3; i++)
-            if (dice[i] < 4)
+            if (dice[i] > 4)
                 dice[i] = rollDice();
     }
 

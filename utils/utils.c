@@ -11,12 +11,15 @@ void printTitle()
     printf("=====================================\n\n" RESET);
 }
 
+
+//Game pause, wait an input
 void waitEnter()
 {
     printf(BOLD BRIGHT_WHITE"\nAppuyez sur ENTREE pour continuer..."RESET);
     getchar();
 }
 
+//Func to enter a string
 void inputc(char* input)
 {
     int i =0;

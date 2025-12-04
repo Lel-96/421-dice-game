@@ -15,7 +15,7 @@
 
 
 
-
+//ask the player for reroll dices with limit
 int askReroll(int dice[3], int *attempt)
 {
     char choice[16] = {0};
@@ -43,7 +43,7 @@ int askReroll(int dice[3], int *attempt)
     return 1;
 }
 
-
+//Play the turn of the player specified
 void playTurn(const char *name, int dice[3], int isAI,int* max_attempt, int power_p1)
 {
     int attempt = 1;
@@ -83,6 +83,7 @@ void playTurn(const char *name, int dice[3], int isAI,int* max_attempt, int powe
     *max_attempt = attempt;
 }
 
+//Evoid pot overflow and change game type
 int tokenBank(int* bank, int tokens, char* round)
 {
     int r = *bank - tokens;
@@ -100,6 +101,7 @@ int tokenBank(int* bank, int tokens, char* round)
     }
 }
 
+//Evoid player overflow
 int tokenPlayer(int tokens1, int tokens2)
 {
     int r = tokens1 - tokens2;
@@ -113,6 +115,7 @@ int tokenPlayer(int tokens1, int tokens2)
     }
 }
 
+//Choose who start the game
 int round0(int p1[3], int p2[3], int mode)
 {
     int can_start =0;
@@ -154,6 +157,7 @@ int round0(int p1[3], int p2[3], int mode)
 
 }
 
+//Fonction of the game -> all logic are organise
 int game()
 {
     srand(time(NULL));
@@ -166,6 +170,7 @@ int game()
     int p1[3], p2[3];
     int beginner, max_attempt =0;
 
+    //by default the game start with "Load"
     char round = 'C';
 
     CLEAR();

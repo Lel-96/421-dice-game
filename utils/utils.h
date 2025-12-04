@@ -8,10 +8,10 @@ void inputc(char* input);
 
 // ========== CODES ANSI ==========
 
-// Réinitialisation
+// reset
 #define RESET "\033[0m"
 
-// Styles de texte
+// text style
 #define BOLD "\033[1m"
 #define DIM "\033[2m"
 #define ITALIC "\033[3m"
@@ -20,7 +20,7 @@ void inputc(char* input);
 #define REVERSE "\033[7m"
 #define HIDDEN "\033[8m"
 
-// Couleurs de texte
+//  text color
 #define BLACK "\033[30m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -30,7 +30,7 @@ void inputc(char* input);
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
 
-// Couleurs de texte vives
+// bright color text
 #define BRIGHT_BLACK "\033[90m"
 #define BRIGHT_RED "\033[91m"
 #define BRIGHT_GREEN "\033[92m"
@@ -40,7 +40,7 @@ void inputc(char* input);
 #define BRIGHT_CYAN "\033[96m"
 #define BRIGHT_WHITE "\033[97m"
 
-// Couleurs de fond
+// Background color
 #define BG_BLACK "\033[40m"
 #define BG_RED "\033[41m"
 #define BG_GREEN "\033[42m"
@@ -50,7 +50,7 @@ void inputc(char* input);
 #define BG_CYAN "\033[46m"
 #define BG_WHITE "\033[47m"
 
-// Couleurs de fond vives
+// bright background color
 #define BG_BRIGHT_BLACK "\033[100m"
 #define BG_BRIGHT_RED "\033[101m"
 #define BG_BRIGHT_GREEN "\033[102m"
@@ -60,7 +60,7 @@ void inputc(char* input);
 #define BG_BRIGHT_CYAN "\033[106m"
 #define BG_BRIGHT_WHITE "\033[107m"
 
-// Mouvements du curseur
+// Cursor movement
 #define CLEAR_SCREEN "\033[2J\033[H"
 #define CLEAR_LINE "\033[2K"
 #define MOVE_UP "\033[1A"

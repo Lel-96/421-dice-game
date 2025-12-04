@@ -4,6 +4,7 @@
 #include <time.h>
 #include "../../utils/utils.h"
 
+//Print the dice value with it's ASCII art
 void printDice(int value)
 {
     const char *dice[] = {
@@ -53,6 +54,7 @@ void printDice(int value)
     printf("%s", dice[value]);
 }
 
+//Print the three dices
 void printPlayerDice(const char *player, int t[3])
 {
     for(int i=0; i<strlen(player); i++)
@@ -77,6 +79,7 @@ void printPlayerDice(const char *player, int t[3])
     }
 }
 
+//return a random value beetween 1 and 6
 int rollDice() {
     return rand() % 6 + 1;
 }

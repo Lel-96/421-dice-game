@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//sort th dice in ascending order
 void sort3(int t[3]) {
     for (int i = 0; i < 2; i++)
         for (int j = i + 1; j < 3; j++)
@@ -11,10 +12,12 @@ void sort3(int t[3]) {
             }
 }
 
+//sum of the 3 dice
 int sum(int t[3]) {
     return t[0] + t[1] + t[2];
 }
 
+//Player game force, the smaller the value, the stronger it is.s
 int power(int t_in[3]) {
     int t[3] = {t_in[0], t_in[1], t_in[2]};
     sort3(t);
@@ -42,6 +45,7 @@ int power(int t_in[3]) {
     return 18;
 }
 
+// How much token win for this power
 int token(int p) {
     if (p == 1) return 10;
     if (p == 2) return 7;
@@ -53,6 +57,7 @@ int token(int p) {
     return 1;
 }
 
+//Determine the winner
 int winner(int p1[3], int p2[3]) {
     int pw1 = power(p1);
     int pw2 = power(p2);

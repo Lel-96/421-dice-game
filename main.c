@@ -10,6 +10,7 @@ int main()
 {
     char loop[10];
     loop[0] = 'y';
+    //Game loop
     while(loop != 'n' && loop != 'N')
     {
         game();
