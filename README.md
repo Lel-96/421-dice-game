@@ -1,48 +1,48 @@
-# 🎲 Jeu du 421
+# 🎲 421 Dice Game
 
-Un jeu de dés classique français développé en C, offrant une expérience complète avec interface console, mode solo contre IA et multijoueur local.
+A classic French dice game developed in C, offering a complete experience with console interface, solo mode against AI, and local multiplayer.
 
 ## 📋 Description
 
-Le 421 est un jeu de dés traditionnel où deux joueurs s'affrontent en lançant trois dés. L'objectif est d'obtenir la combinaison la plus puissante pour gagner des jetons et éliminer son adversaire.
+421 is a traditional dice game where two players compete by rolling three dice. The objective is to obtain the most powerful combination to win tokens and eliminate your opponent.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-- 🎮 **Deux modes de jeu**
-  - Joueur vs Joueur (local)
-  - Joueur vs IA
+- 🎮 **Two game modes**
+  - Player vs Player (local)
+  - Player vs AI
   
-- 🎯 **Système de jeu complet**
-  - Système de puissance basé sur les combinaisons de dés
-  - Mécanisme de jetons avec pot central (21 jetons)
-  - Phases de jeu : Charge (C) et Décharge (D)
-  - Jusqu'à 3 relances par tour
+- 🎯 **Complete game system**
+  - Power system based on dice combinations
+  - Token mechanism with central pot (21 tokens)
+  - Game phases: Charge (C) and Discharge (D)
+  - Up to 3 re-rolls per turn
   
-- 🤖 **IA intelligente**
-  - Stratégie adaptative basée sur la puissance des dés
-  - Relance automatique des dés faibles
+- 🤖 **Intelligent AI**
+  - Adaptive strategy based on dice power
+  - Automatic re-rolling of weak dice
   
-- 🎨 **Interface console soignée**
-  - Affichage ASCII art des dés
-  - Interface claire et intuitive
-  - Compatible Windows et Linux
+- 🎨 **Polished console interface**
+  - ASCII art dice display
+  - Clear and intuitive interface
+  - Windows and Linux compatible
 
-## 🏗️ Structure du projet
+## 🏗️ Project Structure
 
 ```
 421/
-├── main.c          # Point d'entrée du programme
-├── game.c/h        # Logique principale du jeu
-├── rules.c/h       # Règles et calculs de puissance
-├── dice.c/h        # Gestion et affichage des dés
-├── ai.c/h          # Intelligence artificielle
-└── utils.c/h       # Fonctions utilitaires
+├── main.c          # Program entry point
+├── game.c/h        # Main game logic
+├── rules.c/h       # Rules and power calculations
+├── dice.c/h        # Dice management and display
+├── ai.c/h          # Artificial intelligence
+└── utils.c/h       # Utility functions
 ```
 
-## 📊 Hiérarchie des combinaisons
+## 📊 Combination Hierarchy
 
-| Rang | Combinaison | Puissance | Jetons |
-|------|-------------|-----------|--------|
+| Rank | Combination | Power | Tokens |
+|------|-------------|-------|--------|
 | 1 | 4-2-1 | 1 | 10 |
 | 2 | 1-1-1 | 2 | 7 |
 | 3 | 1-1-6 | 3 | 6 |
@@ -59,37 +59,37 @@ Le 421 est un jeu de dés traditionnel où deux joueurs s'affrontent en lançant
 | 14 | 5-4-3 | 14 | 2 |
 | 15 | 4-3-2 | 15 | 2 |
 | 16 | 3-2-1 | 16 | 2 |
-| 17 | 2-2-1 (Nenette) | 17 | Victoire automatique |
-| 18 | Autre | 18 | 1 |
+| 17 | 2-2-1 (Nenette) | 17 | Automatic win |
+| 18 | Other | 18 | 1 |
 
-*Note : Pour les combinaisons de puissance 18, le gagnant est déterminé par la somme des dés.*
+*Note: For combinations with power 18, the winner is determined by the sum of the dice.*
 
-## 🎮 Règles du jeu
+## 🎮 Game Rules
 
-### Déroulement d'une partie
+### Game Flow
 
-1. **Phase initiale** : Manche de détermination pour savoir qui commence
-2. **Phase de Charge** (C) : Les joueurs accumulent des jetons depuis le pot (21 jetons)
-3. **Phase de Décharge** (D) : Une fois le pot vide, les joueurs s'échangent leurs jetons
-4. **Victoire** : Le premier joueur à atteindre 0 jeton remporte la partie
+1. **Initial phase**: Determination round to decide who starts
+2. **Charge phase** (C): Players accumulate tokens from the pot (21 tokens)
+3. **Discharge phase** (D): Once the pot is empty, players exchange their tokens
+4. **Victory**: The first player to reach 0 tokens wins the game
 
-### Tour de jeu
+### Turn Structure
 
-- Chaque joueur lance 3 dés
-- Possibilité de relancer certains dés (jusqu'à 3 lancers maximum)
-- Le second joueur ne peut pas faire plus de lancers que le premier
-- Comparaison des puissances pour déterminer le perdant
-- Le perdant récupère des jetons selon la puissance du gagnant
+- Each player rolls 3 dice
+- Option to re-roll selected dice (up to 3 rolls maximum)
+- The second player cannot make more rolls than the first
+- Power comparison to determine the loser
+- The loser collects tokens based on the winner's power
 
-## 🚀 Compilation et exécution
+## 🚀 Compilation and Execution
 
-### Avec Code::Blocks
+### With Code::Blocks
 
-1. Ouvrir Code::Blocks
-2. Ajouter un projet existant
-3. Ouvrire le dossier contenant le projet
+1. Open Code::Blocks
+2. Add an existing project
+3. Open the folder containing the project
 
-### En ligne de commande
+### Command Line
 
 #### Windows (MinGW)
 ```bash
@@ -103,33 +103,33 @@ gcc main.c game.c rules.c dice.c ai.c utils.c -o 421
 ./421
 ```
 
-## 🎯 Utilisation
+## 🎯 Usage
 
-1. Lancez le programme
-2. Choisissez votre mode de jeu (1 ou 2)
-3. Suivez les instructions à l'écran
-4. Pour relancer des dés, entrez leurs numéros (ex: "13" pour relancer les dés 1 et 3)
-5. Appuyez sur Entrée pour continuer entre les tours
+1. Launch the program
+2. Choose your game mode (1 or 2)
+3. Follow the on-screen instructions
+4. To re-roll dice, enter their numbers (e.g., "13" to re-roll dice 1 and 3)
+5. Press Enter to continue between turns
 
-## 🛠️ Prérequis
+## 🛠️ Prerequisites
 
-- Compilateur C (GCC, MinGW, ou autre)
-- Code::Blocks (recommandé) ou tout autre IDE C
-- Système d'exploitation : Windows, Linux ou macOS
+- C compiler (GCC, MinGW, or other)
+- Code::Blocks (recommended) or any other C IDE
+- Operating system: Windows, Linux, or macOS
 
-## 📝 Licence
+## 📝 License
 
-Projet éducatif libre d'utilisation.
+Educational project, free to use.
 
 ## 👨‍💻 Contribution
 
-Ce projet est un jeu complet et fonctionnel. Les améliorations possibles :
-- Ajout de graphismes SDL
-- Sauvegarde des parties
-- Mode multijoueur en réseau
-- Statistiques et historique des parties
-- Niveaux de difficulté pour l'IA
+This project is a complete and functional game. Possible improvements:
+- SDL graphics integration
+- Game save functionality
+- Network multiplayer mode
+- Statistics and game history
+- AI difficulty levels
 
 ---
 
-**Bon jeu ! 🎲🎲🎲**
+**Enjoy the game! 🎲🎲🎲**
