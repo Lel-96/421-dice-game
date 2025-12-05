@@ -19,10 +19,10 @@
 int askReroll(int dice[3], int *attempt)
 {
     char choice[16] = {0};
-    printf("\nVoulez-vous relancer certains dés ? (y/n) : ");
+    printf("\nVoulez-vous relancer certains dés ? (o/n) : ");
     //fgets(choice, sizeof(choice), stdin);
     inputc(choice);
-    if (choice[0] != 'y' && choice[0] != 'Y')
+    if (choice[0] != 'o' && choice[0] != 'O')
     {
         return 0;
     }
@@ -124,11 +124,11 @@ int round0(int p1[3], int p2[3], int mode)
     {
         printTitle();
         printf(BOLD"Premier tour\n"RESET);
-        printf(ITALIC"→ Joueur 1 joue.\n"ITALIC);
+        printf(ITALIC"Joueur 1 joue.\n"ITALIC);
         waitEnter();
         playTurn("Joueur 1", p1, 0, &max_attempt, 0);
 
-        printf(ITALIC"→ Joueur 2 joue.\n"ITALIC);
+        printf(ITALIC"Joueur 2 joue.\n"ITALIC);
         waitEnter();
         playTurn("Joueur 2", p2, (mode == 2 ? 1 : 0), &max_attempt, power(p1));
         waitEnter();
@@ -212,11 +212,11 @@ int game()
         else
         {
             max_attempt = 0;
-            printf(ITALIC"→ Joueur 2 joue.\n"RESET);
+            printf(ITALIC"Joueur 2 joue.\n"RESET);
             waitEnter();
             playTurn("Joueur 2", p2, (mode == 2 ? 1 : 0), &max_attempt, 0);
 
-            printf(ITALIC"→ Joueur 1 joue.\n"RESET);
+            printf(ITALIC"Joueur 1 joue.\n"RESET);
             waitEnter();
             playTurn("Joueur 1", p1, 0, &max_attempt, 0);
             waitEnter();
